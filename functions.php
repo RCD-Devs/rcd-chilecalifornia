@@ -1,70 +1,197 @@
 <?php
 /**
- * blm_basic functions and definitions
+ * Chile California Council functions and definitions
  *
- * @package blm_basic
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package Chile_California_Council
  */
 
-add_action( 'after_setup_theme', 'blm_theme_setup' );
-function blm_theme_setup() {
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '1.0.0' );
+}
 
-	global $content_width;
-	/* Set the $content_width for things such as video embeds. */
-	if ( !isset( $content_width ) )
-	$content_width = 600;
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support for post thumbnails.
+ */
+function chilecalifornia_setup() {
+	/*
+		* Make theme available for translation.
+		* Translations can be filed in the /languages/ directory.
+		* If you're building a theme based on Chile California Council, use a find and replace
+		* to change 'chilecalifornia' to the name of your theme in all the template files.
+		*/
+	load_theme_textdomain( 'chilecalifornia', get_template_directory() . '/languages' );
 
-	/* Add theme support for automatic feed links. */
+	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	/* Add theme support for post thumbnails (featured images). */
+	/*
+		* Let WordPress manage the document title.
+		* By adding theme support, we declare that this theme does not use a
+		* hard-coded <title> tag in the document head, and expect WordPress to
+		* provide it for us.
+		*/
+	add_theme_support( 'title-tag' );
+
+	/*
+		* Enable support for Post Thumbnails on posts and pages.
+		*
+		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		*/
 	add_theme_support( 'post-thumbnails' );
+
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus(
+		array(
+			'menu-1' => esc_html__( 'Primary', 'chilecalifornia' ),
+		)
+	);
+
+	/*
+		* Switch default core markup for search form, comment form, and comments
+		* to output valid HTML5.
+		*/
+	add_theme_support(
+		'html5',
+		array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+			'style',
+			'script',
+		)
+	);
+
+	// Set up the WordPress core custom background feature.
+	add_theme_support(
+		'custom-background',
+		apply_filters(
+			'chilecalifornia_custom_background_args',
+			array(
+				'default-color' => 'ffffff',
+				'default-image' => '',
+			)
+		)
+	);
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	/**
+	 * Add support for core custom logo.
+	 *
+	 * @link https://codex.wordpress.org/Theme_Logo
+	 */
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 250,
+			'width'       => 250,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
 }
+add_action( 'after_setup_theme', 'chilecalifornia_setup' );
 
-/* Add your nav menus function to the 'init' action hook. */
-add_action( 'init', 'blm_register_menus' );
-
-/* Add custom actions. */
-add_action( 'widgets_init', 'blm_register_sidebars' );
-
-// Add menu features 
-function blm_register_menus() {
-	register_nav_menus(array( 'primary'=>__( 'Primary Menu' ), ));
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function chilecalifornia_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'chilecalifornia_content_width', 640 );
 }
+add_action( 'after_setup_theme', 'chilecalifornia_content_width', 0 );
 
-// Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
-function blm_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function chilecalifornia_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'chilecalifornia' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'chilecalifornia' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
-add_filter( 'wp_page_menu_args', 'blm_page_menu_args' );
+add_action( 'widgets_init', 'chilecalifornia_widgets_init' );
 
-function blm_register_sidebars() {
-	register_sidebar( array(
-		'id' => 'primary',
-		'name' => __( 'Primary Sidebar', 'blm_basic' ),
-		'description' => __( 'The following widgets will appear in the main sidebar div.', 'blm_basic' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h4>',
-		'after_title' => '</h4>'
-	) );
-}
+/**
+ * Enqueue scripts and styles.
+ */
+function chilecalifornia_scripts() {
+	wp_enqueue_style( 'chilecalifornia-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_style_add_data( 'chilecalifornia-style', 'rtl', 'replace' );
 
-function blm_init_method() {
-	
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_script( 'chilecalifornia-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
-	/* Load the comment reply JavaScript. */
-	if ( is_singular() && get_option( 'thread_comments' ) && comments_open() )
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+	}
 }
-add_action( 'wp_enqueue_scripts', 'blm_init_method' );
+add_action( 'wp_enqueue_scripts', 'chilecalifornia_scripts' );
 
-// remove junk from head
-remove_action( 'wp_head', 'rsd_link' );
-remove_action( 'wp_head', 'wp_generator' );
-remove_action( 'wp_head', 'wlwmanifest_link ');
-remove_action( 'wp_head', 'feed_links_extra', 3 );
-remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );	
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
+
+/**
+ * Functions which enhance the theme by hooking into WordPress.
+ */
+require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require get_template_directory() . '/inc/jetpack.php';
+}
+
+
+function chilecalifornia_enqueue_assets() {
+    // Encolar styles.css
+    wp_enqueue_style('principal-styles', get_template_directory_uri() . '/css/styles.css', array(), '1.0', 'all');
+
+    // Encolar header.js
+    wp_enqueue_script('header-script', get_template_directory_uri() . '/js/header.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'chilecalifornia_enqueue_assets');
+
+
+/**
+ * Allow SVG upload
+ */
+function allow_svg_upload($mimes) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+ }
+ add_filter('upload_mimes', 'allow_svg_upload');
