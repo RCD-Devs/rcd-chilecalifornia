@@ -33,8 +33,8 @@
 
 	<header class="header">
         <nav class="max-width navbar">
-            <a href="#" class="navbar-brand"><img src="<?php echo get_template_directory_uri(); ?>/img/logo-header.png" alt="Logo Chile California"></a>
-            <button class="btn btn-gradient open-form-search mob"><img src="<?php echo get_template_directory_uri(); ?>/img/lupa.svg" alt=""></button>
+            <a href="#" class="navbar-brand"><img src="<?php echo get_template_directory_uri(); ?>/images/logo-header.png" alt="Logo Chile California"></a>
+            <button class="btn btn-gradient open-form-search mob"><img src="<?php echo get_template_directory_uri(); ?>/images/lupa.svg" alt=""></button>
             <button class="btn btn-toggle-menu" id="btn-toggle-menu"><span></span><span></span><span></span></button>
             <div class="menu-container">
                 <ul class="menu">
@@ -57,9 +57,9 @@
                         </div>
                     </li>
                     <li class="menu-item"><a href="#" class="text-black">Contact</a></li>
-                    <li class="menu-item desk"><button class="btn btn-gradient open-form-search"><img src="<?php echo get_template_directory_uri(); ?>/img/lupa.svg" alt="icono lupa"></button></li>
+                    <li class="menu-item desk"><button class="btn btn-gradient open-form-search"><img src="<?php echo get_template_directory_uri(); ?>/images/lupa.svg" alt="icono lupa"></button></li>
                     <li class="menu-item has-submenu">
-                        <a href="javascript:void(0)" class="btn change-lang text-black"><img src="<?php echo get_template_directory_uri(); ?>/img/lenguaje.svg" alt="icono"><span>ESP</span></a>
+                        <a href="javascript:void(0)" class="btn change-lang text-black"><img src="<?php echo get_template_directory_uri(); ?>/images/lenguaje.svg" alt="icono"><span>ESP</span></a>
                         <button class="btn btn-toggle-submenu">
                             <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.42 0.451988L13.48 1.51299L7.70301 7.29199C7.61044 7.38514 7.50037 7.45907 7.37912 7.50952C7.25787 7.55997 7.12784 7.58594 6.99651 7.58594C6.86518 7.58594 6.73515 7.55997 6.6139 7.50952C6.49265 7.45907 6.38258 7.38514 6.29001 7.29199L0.51001 1.51299L1.57001 0.452987L6.99501 5.87699L12.42 0.451988Z" fill="currentcolor"/>
