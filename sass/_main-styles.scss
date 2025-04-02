@@ -1,0 +1,164 @@
+@import 'colors';
+
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+html{
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #D9D9D9;
+}
+::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 5px;
+}
+// ::-webkit-scrollbar-thumb:hover {
+//     background: ;
+// }
+.text-primary{
+    color: $primary;
+}
+.text-grey{
+    color: $grey;
+}
+.text-black{
+    color: #000;
+}
+.text-white{
+    color: $white;
+}
+.bg-primary{
+    background-color: $primary !important;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: "Roboto Condensed", sans-serif;
+}
+h1, h2, h3, h4, h5, h6, p, figure{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+a.btn{
+    display: block;
+    text-align: center;
+}
+.btn{
+    display: block;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-gradient{
+    background: linear-gradient(180deg, #91C69B 0%, #58B2C7 47.73%);
+    color: $white;
+    border-radius: 20px;
+    padding:  10px 22px;
+}
+.max-width{
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+.my-section{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.py-section{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.px-section{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.title-section{
+    font-size: 26px;
+    font-weight: 700;
+}
+.paragraph{
+    font-size: 16px;
+    font-weight: 400;
+}
+/*OWL CAROUSEL*/
+.owl-carousel .owl-stage-outer{
+    overflow: visible;
+}
+.owl-dots{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    .owl-dot{
+        width: 10px;
+        height: 10px;
+        border-radius: 20px;
+        &.active{
+            width: 40px;
+        }
+    }
+}
+/*FIN OWL CAROUSEL*/
+@media (min-width: 576px) {
+    .max-width{
+        max-width: 680px;
+    }
+    .title-section{
+        font-size: 28px;
+    }
+}
+@media (min-width: 768px) {
+    .max-width{
+        max-width: 880px;
+    }
+    .py-section{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .title-section{
+        font-size: 32px;
+    }
+    .paragraph{
+        font-size: 18px;
+    }
+}
+@media (min-width: 992px) {
+    .max-width{
+        max-width: 1000px;
+    }
+    .title-section{
+        font-size: 34px;
+    }
+}
+@media (min-width: 1200px) {
+    .max-width{
+        max-width: 1280px;
+    }
+    .py-section{
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .title-section{
+        font-size: 36px;
+    }
+    .paragraph{
+        font-size: 20px;
+    }
+}
+@media (min-width: 1400px) {
+    .title-section{
+        font-size: 40px;
+    }
+}

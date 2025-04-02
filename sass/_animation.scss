@@ -1,0 +1,101 @@
+.fade-in{
+    opacity: 0;
+}
+.fade-in.visible{
+    animation: fade-in 1.5s ease 1 forwards;
+}
+.fade-in-right{
+    opacity: 0;
+}
+.fade-in-right.visible{
+    animation: fade-in-right 1.5s ease 1 forwards;
+}
+.fade-bottom{
+    opacity: 0;
+}
+.fade-bottom.visible{
+    animation: fade-bottom 1.5s ease 1 forwards;
+    animation: fade-bottom 1.2s ease 1 infinite;
+}
+.zoomin{
+    opacity: 0;
+}
+.zoomin.visible{
+    animation: zoomin 1.5s ease 1 forwards;
+}
+@keyframes fade-in {
+    from{
+        opacity: 0;
+        transform: translateX(-500px);
+        filter: blur(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+
+}
+@keyframes fade-in-right {
+    from{
+        opacity: 0;
+        transform: translateX(500px);
+        filter: blur(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+@keyframes fade-bottom {
+    from{
+        opacity: 0;
+        transform: translateY(500px);
+        filter: blur(10px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+@keyframes zoomin {
+    from{
+        opacity: 0;
+        transform: scale(0.5);
+        filter: blur(10px);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes opac {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
