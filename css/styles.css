@@ -729,12 +729,6 @@ a.btn {
   height: 30vh;
 }
 
-.background {
-  position: relative;
-  height: 60vh;
-  background: url("get_template_directory_uri()/images/contact-image.jpg") no-repeat center center/cover;
-  z-index: 2;
-}
 
 .form-container {
   position: relative;
