@@ -18,6 +18,12 @@ get_header();
       z-index: 2; 
     }
 
+  @media (max-width: 768px) {
+    .background {
+      height: 40vh;
+    }
+  }
+
 </style>
 
 
