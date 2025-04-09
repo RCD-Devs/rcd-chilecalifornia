@@ -54,9 +54,9 @@
   SineWaveGenerator.prototype._resizeWidth = function () {
       this.dpr = window.devicePixelRatio || 1;
     this.width = this.el.width = window.innerWidth * this.dpr;
-    this.height = this.el.height = (window.innerHeight * 0.4) * this.dpr;
+    this.height = this.el.height = (window.innerHeight * 0.3) * this.dpr;
     this.el.style.width = window.innerWidth + 'px';
-    this.el.style.height = (window.innerHeight * 0.3) + 'px'; 
+    this.el.style.height = (window.innerHeight * 0.35) + 'px'; 
     this.waveWidth = this.width * 0.95;
     this.waveLeft = this.width * 0.025;
   };
@@ -104,9 +104,9 @@
     new SineWaveGenerator({
       el: canvas,
     waves: [
-      { baseOffset: 60, speedModifier: 0.8, timeModifier: 2, lineWidth: 2, amplitude: 150, wavelength: 300, strokeStyle: 'rgba(145, 198, 155, 0.5)' },
-      { baseOffset: 40, speedModifier: 0.6, timeModifier: 2.5, lineWidth: 2, amplitude: 120, wavelength: 400, strokeStyle: 'rgba(88, 178, 199, 0.5)' },
-      { baseOffset: 15, speedModifier: 0.4, timeModifier: 3, lineWidth: 2, amplitude: 90, wavelength: 500, strokeStyle: 'rgba(145, 198, 155, 0.3)' }
+      { baseOffset: 67, speedModifier: 0.8, timeModifier: 2, lineWidth: 2, amplitude: 150, wavelength: 300, strokeStyle: 'rgba(145, 198, 155, 0.5)' },
+      { baseOffset: 42, speedModifier: 0.6, timeModifier: 2.5, lineWidth: 2, amplitude: 110, wavelength: 400, strokeStyle: 'rgba(88, 178, 199, 0.5)' },
+      { baseOffset: 13, speedModifier: 0.4, timeModifier: 3, lineWidth: 2, amplitude: 95, wavelength: 500, strokeStyle: 'rgba(145, 198, 155, 0.3)' }
     ]
   });
   });
