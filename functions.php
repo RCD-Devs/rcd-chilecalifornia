@@ -184,10 +184,7 @@ function chilecalifornia_enqueue_assets() {
     // Encolar header.js
     wp_enqueue_script('header-script', get_template_directory_uri() . '/js/header.js', array('jquery'), '1.0', true);
 
-    // Encolar waves.js solo en la página de contacto
-    if (is_page('contact')) {
-        wp_enqueue_script('waves-script', get_template_directory_uri() . '/js/waves.js', array(), '1.0', true);
-    }
+	wp_enqueue_script('waves-script', get_template_directory_uri() . '/js/waves.js', array(), '1.0', true);
 }
 add_action('wp_enqueue_scripts', 'chilecalifornia_enqueue_assets');
 
