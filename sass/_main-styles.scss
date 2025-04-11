@@ -67,6 +67,11 @@ a.btn{
     border-radius: 20px;
     padding:  10px 22px;
 }
+
+.btn-gradient:hover {
+    background: linear-gradient(180deg, #58B2C7 0%, #91C69B 47.73%);
+}
+
 .max-width{
     width: 100%;
     max-width: 480px;

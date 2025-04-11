@@ -1,0 +1,65 @@
+
+.waves {
+    display: flex;
+    margin: 0;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .page-contact {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh; 
+    margin: 0;
+    padding: 0;
+
+    .waves {
+      top: 60%; 
+      height: 10vh; 
+    }
+    .form-container {
+      position: relative;
+      margin-top: -100px;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      width: 80%;
+      max-width: 943px;
+
+      form {
+        max-width: 622px;
+       
+      }
+
+      .btn {
+        width: fit-content;
+      }
+    }
+
+    .background {
+      position: relative;
+      height: 100%;
+      z-index: 2;
+      overflow: hidden;
+    
+      img {
+        width: 100%;
+        height: 550px;
+        object-fit: cover;
+      }
+    }
+
+  }
+  
+  @media (min-width: 768px) {
+    .page-contact .form-container form {
+      max-width: 652px;
+      max-height: 414px;
+    }
+  }
+  
+ 
