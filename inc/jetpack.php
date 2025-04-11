@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package WordPress-base-theme-underscore
+ * @package Chile_California_Council
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function wordpress_base_theme_underscore_jetpack_setup() {
+function chilecalifornia_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'wordpress_base_theme_underscore_infinite_scroll_render',
+			'render'    => 'chilecalifornia_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function wordpress_base_theme_underscore_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'wordpress-base-theme-underscore-style',
+				'stylesheet' => 'chilecalifornia-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,13 +48,13 @@ function wordpress_base_theme_underscore_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'wordpress_base_theme_underscore_jetpack_setup' );
+add_action( 'after_setup_theme', 'chilecalifornia_jetpack_setup' );
 
-if ( ! function_exists( 'wordpress_base_theme_underscore_infinite_scroll_render' ) ) :
+if ( ! function_exists( 'chilecalifornia_infinite_scroll_render' ) ) :
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	function wordpress_base_theme_underscore_infinite_scroll_render() {
+	function chilecalifornia_infinite_scroll_render() {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :

@@ -188,7 +188,6 @@ function chilecalifornia_enqueue_assets() {
 }
 add_action('wp_enqueue_scripts', 'chilecalifornia_enqueue_assets');
 
-
 /**
  * Allow SVG upload
  */
