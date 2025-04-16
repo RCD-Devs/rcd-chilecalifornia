@@ -182,7 +182,10 @@ function chilecalifornia_enqueue_assets() {
     wp_enqueue_style('principal-styles', get_template_directory_uri() . '/css/styles.css', array(), '1.0', 'all');
 
     // Encolar header.js
+    wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '1.0', true);
+    wp_enqueue_script('main-script', get_template_directory_uri() . '/js/main.js', array('jquery'), '1.0', true);
     wp_enqueue_script('header-script', get_template_directory_uri() . '/js/header.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('home-script', get_template_directory_uri() . '/js/home.js', array('jquery'), '1.0', true);
 
 	wp_enqueue_script('waves-script', get_template_directory_uri() . '/js/waves.js', array(), '1.0', true);
 }
