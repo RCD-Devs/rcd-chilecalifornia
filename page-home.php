@@ -11,6 +11,11 @@ get_header();
 
 <main>
     <div class="banner">
+        <div class="banner-text max-width">
+            <h1 class="banner-title text-white">Un puente entre culturas para un futuro sostenible</h1>
+            <!-- <p class="banner-paragraph">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus facere ipsa numquam dolorem? Aut beatae, rem velit quam hic necessitatibus maiores itaque quos eius harum illo similique totam voluptatum quod!</p> -->
+            <a href="#" class="btn btn-outline-white">Unéte a nuestra misión</a>
+        </div>
         <picture class="banner-img">
             <!-- Imagen para desktop -->
             <source media="(min-width: 768px)" srcset="<?php echo get_template_directory_uri(); ?>/images/banner-desk.png">

@@ -82,8 +82,17 @@ a.btn {
 .btn-gradient {
   background: linear-gradient(180deg, #91C69B 0%, #58B2C7 47.73%);
   color: #fff;
+}
+
+.btn-gradient, .btn-outline-white {
   border-radius: 20px;
   padding: 10px 22px;
+}
+
+.btn-outline-white {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
 }
 
 .max-width {
@@ -180,6 +189,23 @@ a.btn {
   background-color: #fff;
   border-radius: 15px;
 }
+.banner .banner-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 20px 20px 40px;
+}
+.banner .banner-text .banner-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.banner .banner-text .banner-paragraph {
+  font-size: 16px;
+}
 
 /*SWIPER CAROUSEL*/
 .swiper {
@@ -209,6 +235,12 @@ a.btn {
   .text-top-title span {
     font-size: 110px;
   }
+  .banner .banner-text .banner-title {
+    font-size: 32px;
+  }
+  .banner .banner-text .btn {
+    width: fit-content;
+  }
 }
 @media (min-width: 768px) {
   .max-width {
@@ -224,6 +256,9 @@ a.btn {
   .paragraph {
     font-size: 20px;
   }
+  .banner .banner-text .banner-title {
+    font-size: 38px;
+  }
 }
 @media (min-width: 992px) {
   .max-width {
@@ -234,6 +269,15 @@ a.btn {
   }
   .banner {
     height: 600px;
+  }
+  .banner .banner-text {
+    padding: 20px 20px 60px;
+  }
+  .banner .banner-text .banner-title {
+    font-size: 46px;
+  }
+  .banner .banner-text .banner-title, .banner .banner-text .banner-paragraph {
+    max-width: 997px;
   }
   .text-top-title span {
     font-size: 130px;
@@ -256,6 +300,9 @@ a.btn {
   .paragraph {
     font-size: 22px;
   }
+  .banner .banner-text .banner-title {
+    font-size: 50px;
+  }
 }
 @media (min-width: 1400px) {
   .title-section {
@@ -267,6 +314,9 @@ a.btn {
   .banner {
     border-radius: 0 0 40px 40px;
     height: 672px;
+  }
+  .banner .banner-text .banner-title {
+    font-size: 64px;
   }
   .paragraph {
     font-size: 24px;

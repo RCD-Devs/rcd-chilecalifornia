@@ -31,10 +31,13 @@ html{
     color: $primary;
 }
 .text-grey{
-    color: $grey;
+    color: #616161;
 }
 .text-black{
     color: #000;
+}
+.text-black2{
+    color: #343434;
 }
 .text-white{
     color: $white;
@@ -47,6 +50,9 @@ h1, h2, h3, h4, h5, h6{
 }
 h1, h2, h3, h4, h5, h6, p, figure{
     margin: 0;
+}
+.font-overpass{
+    font-family: "Overpass", sans-serif;
 }
 a{
     text-decoration: none;
@@ -64,14 +70,16 @@ a.btn{
 .btn-gradient{
     background: linear-gradient(180deg, #91C69B 0%, #58B2C7 47.73%);
     color: $white;
+}
+.btn-gradient, .btn-outline-white{
     border-radius: 20px;
     padding:  10px 22px;
 }
-
-.btn-gradient:hover {
-    background: linear-gradient(180deg, #58B2C7 0%, #91C69B 47.73%);
+.btn-outline-white{
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
 }
-
 .max-width{
     width: 100%;
     max-width: 480px;
@@ -79,6 +87,9 @@ a.btn{
 }
 .my-section{
     margin-top: 30px;
+    margin-bottom: 30px;
+}
+.mb-section{
     margin-bottom: 30px;
 }
 .py-section{
@@ -90,38 +101,127 @@ a.btn{
     padding-right: 20px;
 }
 .title-section{
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.text-top-title{
+    position: relative;
+    span{
+        font-size: 96px;
+        font-weight: 800;
+        color: #CECECE;
+    }
+    .title-top-section{
+        position: absolute;
+        top: 40%;
+        left: 80px;
+        transform: translateY(-50%);
+    }
+}
+.title-top-section{
+    position: relative;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 400;
+    width: fit-content;
+    margin-bottom: 20px;
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        background: linear-gradient(90deg, #91C69B 0%, #58B2C7 98.62%);
+        height: 2px;
+        width: 100%;
+    }
 }
 .paragraph{
     font-size: 16px;
     font-weight: 400;
+    margin-bottom: 20px;
 }
-/*OWL CAROUSEL*/
-.owl-carousel .owl-stage-outer{
-    overflow: visible;
-}
-.owl-dots{
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    .owl-dot{
-        width: 10px;
-        height: 10px;
-        border-radius: 20px;
-        &.active{
-            width: 40px;
+.banner{
+    border-radius: 0 0 20px 20px;
+    overflow: hidden;
+    height: 550px;
+    position: relative;
+    .banner-img, .banner-img img, video{
+        height: 100%;
+        width: 100%;
+    }
+    .banner-img img{
+        object-fit: cover;
+    }
+    .banner-triangle{
+        position: absolute;
+        left: 50%;
+        bottom: -35px;
+        transform: translateX(-50%) rotate(45deg);
+        width: 50px;
+        height: 50px;
+        background-color: #fff;
+        border-radius: 15px;
+    }
+    .banner-text{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        padding: 20px 20px 40px;
+        .banner-title{
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .banner-paragraph{
+            font-size: 16px;
         }
     }
 }
-/*FIN OWL CAROUSEL*/
+/*SWIPER CAROUSEL*/
+.swiper{
+    padding-bottom: 40px;
+    .swiper-pagination{
+        .swiper-pagination-bullet{
+            background: #fff;
+            width: 6px;
+            height: 6px;
+            border: 1px solid #343434;
+            &.swiper-pagination-bullet-active{
+                background: #343434;
+            }
+        }
+    }
+}
+/*FIN SWIPER CAROUSEL*/
 @media (min-width: 576px) {
     .max-width{
         max-width: 680px;
     }
     .title-section{
-        font-size: 28px;
+        font-size: 26px;
+    }
+    .paragraph{
+        font-size: 18px;
+    }
+    .text-top-title{
+        span{
+            font-size: 110px;
+        }
+    }
+    .banner{
+        .banner-text{
+            .banner-title{
+                font-size: 32px;
+            }
+            .btn{
+                width: fit-content;
+            }
+        }
     }
 }
 @media (min-width: 768px) {
@@ -136,7 +236,14 @@ a.btn{
         font-size: 32px;
     }
     .paragraph{
-        font-size: 18px;
+        font-size: 20px;
+    }
+    .banner{
+        .banner-text{
+            .banner-title{
+                font-size: 38px;
+            }
+        }
     }
 }
 @media (min-width: 992px) {
@@ -144,7 +251,27 @@ a.btn{
         max-width: 1000px;
     }
     .title-section{
-        font-size: 34px;
+        font-size: 38px;
+    }
+    .banner{
+        height: 600px;
+        .banner-text{
+            padding: 20px 20px 60px;
+            .banner-title{
+                font-size: 46px;
+            }
+            .banner-title, .banner-paragraph{
+                max-width: 997px;
+            }
+        }
+    }
+    .text-top-title{
+        span{
+            font-size: 130px;
+        }
+        .title-top-section{
+            left: 100px;
+        }
     }
 }
 @media (min-width: 1200px) {
@@ -156,14 +283,44 @@ a.btn{
         padding-bottom: 50px;
     }
     .title-section{
-        font-size: 36px;
+        font-size: 44px;
     }
     .paragraph{
-        font-size: 20px;
+        font-size: 22px;
+    }
+    .banner{
+        .banner-text{
+            .banner-title{
+                font-size: 50px;
+            }
+        }
     }
 }
 @media (min-width: 1400px) {
     .title-section{
-        font-size: 40px;
+        font-size: 48px;
+    }
+    .title-top-section{
+        font-size: 18px;
+    }
+    .banner{
+        border-radius: 0 0 40px 40px;
+        height: 672px;
+        .banner-text{
+            .banner-title{
+                font-size: 64px;
+            }
+        }
+    }
+    .paragraph{
+        font-size: 24px;
+    }
+    .text-top-title{
+        .title-top-section{
+            left: 125px;
+        }
+        span{
+            font-size: 160px;
+        }
     }
 }

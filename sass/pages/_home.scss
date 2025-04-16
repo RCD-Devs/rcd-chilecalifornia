@@ -1,2 +1,497 @@
 @import '../colors';
 
+.section-que-hacemos{
+    .text-container{
+        .paragraph{
+            line-height: 24px;
+        }
+    }
+    .mapa-container{
+        max-width: 300px;
+        margin: 0 auto;
+        img{
+            width: 100%;
+        }
+    }
+}
+.carrusel-container{
+    overflow: visible;
+    .card-c{
+        position: relative;
+        height: 392px;
+        border-radius: 5px;
+        overflow: hidden;
+        .card-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .card-text{
+            position: absolute;
+            bottom: 0;
+            z-index: 3;
+            // height: 100%;
+            width: 100%;
+            padding: 20px 10px;
+            .card-title{
+                font-size: 20px;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+            }
+            .card-paragraph{
+                font-size: 16px;
+                font-weight: 500;
+                margin-bottom: 20px;
+            }
+            .card-link{
+                width: fit-content;
+                position: relative;
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-family: "Roboto Condensed", sans-serif;
+                padding-right: 25px;
+                display: block;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 10%;
+                    right: 0;
+                    background: url("../images/arrow-right-white.svg") no-repeat;
+                    background-size: contain;
+                    width: 18px;
+                    height: 13px;
+                    transition: 0.5s;
+                }
+                &:hover{
+                    &::after{
+                        right: -10px;
+                    }
+                }
+            }
+        }
+        .overlay{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: 0.5s;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: 0.45;
+            box-shadow: 0 0 10px #000;
+        }
+       
+    }
+}
+.section-conecta{
+    display: flex;
+    flex-direction: column;
+    figure{
+        display: flex;
+        height: 468px;
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        figcaption{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            padding: 40px 20px;
+            background: linear-gradient(357.54deg, #000000 2.34%, rgba(102, 102, 102, 0) 82.08%);
+            display: flex;
+            align-items: end;
+            .title-conecta{
+                font-size: 24px;
+                text-transform: uppercase;
+            }
+            .link-conecta{
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                display: block;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                color: #fff;
+                padding: 10px;
+                svg{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+.carrusel-testimonios{
+    overflow: visible;
+    margin-top: 30px;
+    .card-testimonios{
+        height: 410px;
+        position: relative;
+        border-radius: 5px;
+        overflow: hidden;
+        .card-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .text-container{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 3;
+            width: 100%;
+            padding: 20px;
+            .nombre{
+                font-size: 20px;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+            .testimonio{
+                font-size: 16px;
+            }
+        }
+        .overlay{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(355.38deg, #000000 15.93%, rgba(0, 0, 0, 0.06) 63.47%);
+        }
+    }
+}
+.title-lg{
+    font-size: 32px;
+    font-weight: 900;
+    color: #EDEDED;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    span{
+        display: block;
+        padding-left: 10%;
+    }
+}
+.carrusel-noticias{
+    .card-noticia{
+        border: 1px solid #F2F2F2;
+        border-radius: 5px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        .img-noticia{
+            height: 148px;
+            width: 100%;
+            object-fit: cover;
+        }
+        div{
+            padding: 20px 10px;
+            .titulo-noticia{
+                font-size: 20px;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 20px
+            }
+            .descripcion-noticia{
+                font-size: 16px;
+                font-weight: 400;
+                margin-bottom: 20px;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .btn-show-more{
+                display: block;
+                margin-top: 20px;
+                width: fit-content;
+                padding: 10px 40px 10px 22px;
+                border: 1px solid #343434;
+                border-radius: 20px;
+                position: relative;
+                text-transform: uppercase;
+                &::after{
+                    content: "";
+                    position: absolute;
+                    right: 15px;
+                    top: 32%;
+                    background: url('../images/arrow-right-black.svg') no-repeat;
+                    background-size: contain;
+                    height: 13px;
+                    width: 18px;
+                    transition: 0.3s;
+                }
+                &:hover{
+                    &::after{
+                        right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 576px) {
+    .section-conecta{
+        figure{
+            figcaption{
+                .title-conecta{
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+    .title-lg{
+        font-size: 40px;
+    }
+}
+@media (min-width: 768px) {
+    .title-lg{
+        font-size: 56px;
+        padding-left: 10%;
+        span{
+            text-align: end;
+            padding-right: 10%;
+        }
+    }
+    .carrusel-noticias{
+        .card-noticia{
+            .img-noticia{
+                height: 160px;
+            }
+            div{
+                .btn-show-more{
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 992px) {
+    .section-que-hacemos{
+        > div{
+            position: relative;
+            .text-container{
+                width: 55%;
+                padding-top: 60px;
+                .paragraph{
+                    text-align: justify;
+                    line-height: 35px;
+                }
+            }
+            .mapa-container{
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: -1;
+                max-width: none;
+                width: 490px;
+            }
+        }
+    }
+    .section-que-hemos-hecho{
+        >div{
+            display: flex;
+            .text-container{
+                width: 40%;
+                padding-right: 40px;
+            }
+            .carrusel-container{
+                width: 60%;
+                padding-bottom: 0;
+                clip-path: inset(0 -100vw 0 0);
+                .swiper-pagination{
+                    display: none;
+                }
+            }
+        }
+    }
+    .section-conecta{
+        flex-direction: row;
+        figure{
+            width: 50%;
+            height: 520px;
+            figcaption{
+                height: 50%;
+                div{
+                    position: relative;
+                    width: 100%;
+                    max-width: 640px;
+                    float: right;
+                    .title-conecta{
+                        padding-right: 40px;
+                        font-size: 32px;
+                    }
+                    .link-conecta{
+                        top: auto;
+                        right: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+            &:first-child figcaption{
+                justify-content: end;
+            }
+        }
+    }
+    .carrusel-testimonios{
+        .card-testimonios{
+            height: 460px;
+        }
+    }
+    .title-lg{
+        padding-left: 10%;
+        font-size: 68px;
+    }
+    .carrusel-noticias{
+        .card-noticia{
+            div{
+                .titulo-noticia{
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1200px) {
+    .section-que-hacemos{
+        > div{
+            position: relative;
+            .text-container{
+                width: 50%;
+                padding-top: 100px;
+                .paragraph{
+                    line-height: 40px;
+                }
+            }
+            .mapa-container{
+                width: 600px;
+            }
+        }
+    }
+    .section-que-hemos-hecho{
+        >div{
+            .text-container{
+                width: 43%;
+                padding-right: 60px;
+            }
+            .carrusel-container{
+                width: 57%;
+            }
+        }
+    }
+    .carrusel-container{
+        .card-c{
+            height: 500px;
+            .card-text{
+                .card-paragraph{
+                    transition: 0.5s;
+                    max-height: 0;
+                    overflow: hidden;
+                    margin-bottom: 0;
+                }
+            }
+            .overlay{
+                bottom: -100%;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                height: 173px;
+                background: linear-gradient(356.65deg, #000000 3.14%, rgba(102, 102, 102, 0) 109.56%);
+            }
+            &:hover{
+                .card-text{
+                    .card-paragraph{
+                        max-height: 500px;
+                        padding-bottom: 20px;
+                    }
+                }
+                .overlay{
+                    bottom: 0;
+                }
+            }
+        }
+    }
+    .section-conecta{
+        figure{
+            figcaption{
+                .title-conecta{
+                    padding-right: 50px;
+                }
+            }
+        }
+    }
+    .carrusel-testimonios{
+        .card-testimonios{
+            height: 500px;
+        }
+    }
+    .title-lg{
+        font-size: 82px;
+    }
+    .carrusel-noticias{
+        .card-noticia{
+            .img-noticia{
+                height: 180px;
+            }
+        }
+    }
+}
+@media (min-width: 1400px) {
+    .section-que-hacemos{
+        > div{
+            .text-container{
+                padding-top: 170px;
+            }
+            .mapa-container{
+                width: 700px;
+            }
+        }
+    }
+    .section-conecta{
+        figure{
+            height: 600px;
+            figcaption{
+                .title-conecta{
+                    padding-right: 80px;
+                    font-size: 40px;
+                }
+                .link-conecta{
+                    right: 40px;
+                }
+            }
+        }
+    }
+    .carrusel-testimonios{
+        .card-testimonios{
+            height: 520px;
+        }
+    }
+    .title-lg{
+        font-size: 96px;
+    }
+    .carrusel-noticias{
+        .card-noticia{
+            .img-noticia{
+                height: 197px;
+            }
+            div{
+                .titulo-noticia{
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
